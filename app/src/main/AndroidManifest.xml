@@ -19,6 +19,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <receiver android:name=".TorchWidgetProvider" android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data android:name="android.appwidget.provider"
+                android:resource="@xml/app_widget_provider" />
+        </receiver>
+
+        <receiver android:name=".TorchWidgetReceiver" >
+            <intent-filter>
+                <action android:name="COM_TORCH" ></action>
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
